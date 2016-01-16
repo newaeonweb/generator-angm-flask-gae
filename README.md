@@ -4,6 +4,8 @@
 This project is a mix of  [Google App Engine Angular Material Starter](https://github.com/madvas/gae-angular-material-starter)
 And [Gnerator-angm](https://github.com/newaeonweb/generator-angm).
 
+WE KEEP ALL THE COMMENTS AND DOCS FROM THE ORIGINAL PROJECT AT: [THIS LINK](https://github.com/madvas/gae-angular-material-starter).
+
 It's an easy starting point to develop dynamic application using the stack:
 
 * Google App Engine
