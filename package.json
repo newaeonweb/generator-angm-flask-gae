@@ -20,7 +20,13 @@
     "app"
   ],
   "keywords": [
-    "yeoman-generator", "GAE", "Google App Engine", "AngularJS", "Angular Material", "Flask", "Seed", "Starter"
+    "yeoman-generator",
+    "AngularJS",
+    "Google App Engine",
+    "Angular Material",
+    "Flask",
+    "Seed",
+    "Starter Kit"
   ],
   "dependencies": {
     "yeoman-generator": "^0.18.9",

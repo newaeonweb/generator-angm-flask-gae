@@ -1,3 +1,15 @@
+# Generator Angm Flask Gae
+
+> WE KEEP ALL THE COMMENTS AND DOCS FROM THE ORIGINAL PROJECT AT: [THIS LINK](https://github.com/madvas/gae-angular-material-starter).
+
+# Differences:
+
+* We re-write the AngularJS to a different syntax.
+* Change the Login behavior.
+* Add sub-generators.
+
+============================================================================================
+
 #GAE Angular Material Starter
 #####Easiest way to start Google App Engine Angular Material project on Earth & Mars!
 As a base for this I've used starter projects [gae-init] and [MEANJS], so big thanks to them!
