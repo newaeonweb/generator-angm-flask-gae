@@ -1,0 +1,33 @@
+{
+  "name": "generator-angm-flask-gae",
+  "version": "0.1.0",
+  "description": "Angular Generator for Flask ang Google App Engine",
+  "license": "MIT",
+  "main": "app/index.js",
+  "repository": "newaeonweb/generator-angm-flask-gae",
+  "author": {
+    "name": "Fernando Monteiro",
+    "email": "fernando@newaeonweb.com.br",
+    "url": "https://github.com/newaeonweb"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "app"
+  ],
+  "keywords": [
+    "yeoman-generator", "GAE", "Google App Engine", "AngularJS", "Angular Material", "Flask", "Seed", "Starter"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^0.18.9",
+    "chalk": "^1.0.0",
+    "yosay": "^1.0.2"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  }
+}

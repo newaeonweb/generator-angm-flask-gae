@@ -1,0 +1,55 @@
+# if config.DEVELOPMENT
+    <!-- inject:js -->
+    <script src="/p/lib/angular/angular.js"></script>
+    <script src="/p/lib/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/p/lib/angular-animate/angular-animate.js"></script>
+    <script src="/p/lib/angular-messages/angular-messages.js"></script>
+    <script src="/p/lib/angular-aria/angular-aria.js"></script>
+    <script src="/p/lib/restangular/dist/restangular.js"></script>
+    <script src="/p/lib/angular-no-captcha/src/angular-no-captcha.js"></script>
+    <script src="/p/lib/angular-material/angular-material.js"></script>
+    <script src="/p/lib/lodash/lodash.js"></script>
+    <script src="/p/lib/lrInfiniteScroll/lrInfiniteScroll.js"></script>
+    <script src="/p/lib/angulartics/src/angulartics.js"></script>
+    <script src="/p/lib/angulartics/src/angulartics-ga.js"></script>
+    <script src="/p/application.js"></script>
+    <script src="/p/modules/admin/admin.module.js"></script>
+    <script src="/p/modules/core/core.module.js"></script>
+    <script src="/p/modules/users/users.module.js"></script>
+    <script src="/p/modules/admin/app-config/app-config.controller.js"></script>
+    <script src="/p/modules/admin/config/admin.routes.js"></script>
+    <script src="/p/modules/admin/layout/admin.controller.js"></script>
+    <script src="/p/modules/core/config/core.config.js"></script>
+    <script src="/p/modules/core/config/core.lodash.js"></script>
+    <script src="/p/modules/core/config/core.routes.js"></script>
+    <script src="/p/modules/core/directives/gaCaptcha.dir.js"></script>
+    <script src="/p/modules/core/directives/gaInputValidator.dir.js"></script>
+    <script src="/p/modules/core/feedback/feedback.controller.js"></script>
+    <script src="/p/modules/core/home/home.controller.js"></script>
+    <script src="/p/modules/core/layout/header.controller.js"></script>
+    <script src="/p/modules/core/layout/sidenav.controller.js"></script>
+    <script src="/p/modules/core/services/gaAuthentication.service.js"></script>
+    <script src="/p/modules/core/services/gaBrowserHistory.service.js"></script>
+    <script src="/p/modules/core/services/gaToast.service.js"></script>
+    <script src="/p/modules/core/services/gaTracking.service.js"></script>
+    <script src="/p/modules/users/auth/signin.controller.js"></script>
+    <script src="/p/modules/users/auth/signup.controller.js"></script>
+    <script src="/p/modules/users/config/users.routes.js"></script>
+    <script src="/p/modules/users/directives/gaAuthOptions.dir.js"></script>
+    <script src="/p/modules/users/directives/gaEmail.dir.js"></script>
+    <script src="/p/modules/users/directives/gaPassword.dir.js"></script>
+    <script src="/p/modules/users/profile/profile-edit.controller.js"></script>
+    <script src="/p/modules/users/profile/profile-password.controller.js"></script>
+    <script src="/p/modules/users/profile/profile.controller.js"></script>
+    <script src="/p/modules/users/users-list/users.controller.js"></script>
+    <script src="/p/modules/users/auth/password/forgot.controller.js"></script>
+    <script src="/p/modules/users/auth/password/reset.controller.js"></script>
+    <!-- endinject -->
+# else
+    <script src="/p/dist/libs.min.js?{{ config.CURRENT_VERSION_ID }}"></script>
+    <script src="/p/dist/scripts.min.js?{{ config.CURRENT_VERSION_ID }}"></script>
+    <script src="/p/dist/templates.js?{{ config.CURRENT_VERSION_ID }}"></script>
+# endif
+# if config.DEVELOPMENT
+    <script src="http://{{ request.host.split(':')[0] }}:35729/livereload.js"></script>
+# endif
