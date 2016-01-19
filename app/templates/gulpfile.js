@@ -165,7 +165,7 @@
         }).pipe(templateCache('templates.js', {
             standalone : false,
             root       : '/p/modules',
-            module     : 'gae-angular-material-starter'
+            module     : '<%= slugifiedAppName %>'
         })).pipe(gulp.dest(distDir));
     });
 
