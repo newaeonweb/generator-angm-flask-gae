@@ -84,7 +84,7 @@ module.exports = yeoman.generators.Base.extend({
             this.directory('main/model');
 
             // Public directory
-            this.mkdir('public');
+            //this.mkdir('public');
             this.directory('main/public/modules');
             this.template('main/public/_application.js', 'main/public/application.js');
             this.copy('main/public/humans.txt');

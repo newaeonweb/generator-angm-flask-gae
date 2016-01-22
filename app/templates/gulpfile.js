@@ -46,6 +46,7 @@
             'lib/angular-animate/angular-animate.js',
             'lib/angular-messages/angular-messages.js',
             'lib/angular-aria/angular-aria.js',
+            'lib/underscore/underscore.js',
             'lib/restangular/dist/restangular.js',
             'lib/angular-no-captcha/src/angular-no-captcha.js',
             'lib/angular-material/angular-material.js',
