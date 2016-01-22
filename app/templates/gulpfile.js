@@ -23,6 +23,7 @@
     var htmlhint = require('gulp-htmlhint');
     var templateCache = require('gulp-angular-templatecache');
     var zip = require('gulp-zip');
+    var replace = require('gulp-replace');
 
     var rootDir = 'main';
 
@@ -123,7 +124,8 @@
     gulp.task('less', function() {
         return gulp.src(cssFiles.concat(manifestLessFile), {
             cwd : publicDir
-        }).pipe(sourcemaps.init()).pipe(less({
+        }).pipe(replace('screen\\0','screen'))
+          .pipe(sourcemaps.init()).pipe(less({
             paths : lessPaths
         })).pipe(sourcemaps.write()).pipe(concatCss('style.css')).pipe(gulp.dest(distDir));
     });
