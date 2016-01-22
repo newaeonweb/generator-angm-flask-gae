@@ -16,7 +16,7 @@
 
         $mdThemingProvider.theme('default')
             .primaryPalette('indigo')
-            .accentPalette('pink');
+            .accentPalette('blue');
     });
 
     module.run(function(Restangular, gaToast, $state, $rootScope, $timeout, gaFlashMessages, _,

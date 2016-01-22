@@ -5,7 +5,7 @@
         </md-toolbar>
         <md-content class="md-padding md-whiteframe-z1">
             <form name="feedbackForm">
-                <md-input-container>
+                <md-input-container class="md-block">
                     <label>Your message</label>
                     <textarea ng-model="feedback.message"
                               name="feedback"
@@ -20,7 +20,7 @@
                         <div ng-message="required">Feedback message is required</div>
                     </div>
                 </md-input-container>
-                <md-input-container>
+                <md-input-container class="md-block">
                     <label>Your email (optional)</label>
                     <input class="form-control"
                            name="email"

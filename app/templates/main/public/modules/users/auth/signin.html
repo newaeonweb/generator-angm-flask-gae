@@ -6,7 +6,7 @@
 
         <md-content class="md-padding md-whiteframe-z1">
             <form name="signinForm">
-                <md-input-container>
+                <md-input-container class="md-block">
                     <label>Email or username</label>
                     <input ng-model="credentials.login"
                            required
@@ -15,11 +15,13 @@
                            name="login" type="text">
 
                 </md-input-container>
-                <ga-password ng-model="credentials.password"
-                             input-tabindex="2"
-                             name="password"></ga-password>
+
+                <ga-password ng-model="credentials.password" input-tabindex="2" name="password"></ga-password>
+
                 <ga-captcha ng-model="credentials.captcha" ng-required="true" class="mar-bot-15"
                             control="captchaControl"></ga-captcha>
+
+
                 <div class="mar-top-20" layout="column" layout-gt-sm="row" layout-margin>
                     <md-button flex flex-order-sm="3"
                                tabindex="5"
