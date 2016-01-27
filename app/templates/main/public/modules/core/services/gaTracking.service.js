@@ -1,6 +1,9 @@
 (function() {
     'use strict';
-    var module = angular.module('core');
+
+	angular
+		.module('core')
+		.factory('gaTracking', gaTracking);
 
     /**
      * @name gaToast
@@ -10,7 +13,9 @@
      * Currenly works only with Google Analytics
      */
 
-    module.factory('gaTracking', function($analytics) {
+    gaTracking.$inject = ['$analytics'];
+
+	function gaTracking($analytics) {
 
         return {
             eventTrack : function(eventName, label, category) {
@@ -21,6 +26,6 @@
             }
         };
 
-    });
+    }
 
 }());

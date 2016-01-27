@@ -1,6 +1,9 @@
 (function() {
     'use strict';
-    var module = angular.module('users');
+
+	angular
+		.module('users')
+		.directive('gaEmail', gaEmail);
 
     /**
      * @name gaEmail
@@ -10,7 +13,7 @@
      * throughout the app
      */
 
-    module.directive('gaEmail', function() {
+    function gaEmail() {
         /*jslint unparam:true*/
         var prelink = function(scope, el, attrs, form) {
             scope.name = scope.name || 'email';
@@ -34,6 +37,6 @@
             },
             templateUrl : '/p/modules/users/directives/gaEmail.html'
         };
-    });
+    }
 
 }());

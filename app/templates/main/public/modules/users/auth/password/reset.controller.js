@@ -1,9 +1,13 @@
 (function() {
     'use strict';
-    var module = angular.module('users');
 
-    module.controller('ResetController', function($scope, Restangular, gaAuthentication, $stateParams, gaToast,
-                                                  $state, gaTracking) {
+	angular
+		.module('users')
+		.controller('ResetController', ResetController);
+
+    ResetController.$inject = ['$scope', 'Restangular', 'gaAuthentication', '$stateParams', 'gaToast', '$state', 'gaTracking'];
+
+	function ResetController($scope, Restangular, gaAuthentication, $stateParams, gaToast, $state, gaTracking) {
 
         if (gaAuthentication.isLogged()) {
             $state.go('home');
@@ -21,6 +25,6 @@
                 $state.go('home');
             });
         };
-    });
+    }
 
 }());

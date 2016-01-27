@@ -1,9 +1,13 @@
 (function() {
     'use strict';
-    var module = angular.module('core');
 
-    module.controller('FeedbackController', function($scope, Restangular, gaToast, gaAppConfig, gaAuthentication,
-                                                     gaBrowserHistory) {
+	angular
+		.module('core')
+		.controller('FeedbackController', FeedbackController );
+
+    FeedbackController.$inject = ['$scope', 'Restangular', 'gaToast', 'gaAppConfig', 'gaAuthentication', 'gaBrowserHistory' ];
+
+	function FeedbackController($scope, Restangular, gaToast, gaAppConfig, gaAuthentication, gaBrowserHistory) {
         var ctrl = this;
         $scope.cfg = gaAppConfig;
 
@@ -25,6 +29,6 @@
         };
 
         ctrl.resetForm();
-    });
+    }
 
 }());

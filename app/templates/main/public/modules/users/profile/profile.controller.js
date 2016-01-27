@@ -1,9 +1,13 @@
 (function() {
     'use strict';
-    var module = angular.module('users');
 
-    module.controller('ProfileController', function($scope, Restangular, gaAppConfig, gaAuthentication, $stateParams,
-                                                    _, $mdDialog, gaToast, $state) {
+	angular
+		.module('users')
+		.controller('ProfileController', ProfileController);
+
+	ProfileController.$inject = ['$scope', 'Restangular', 'gaAppConfig', 'gaAuthentication', '$stateParams', '_', '$mdDialog', 'gaToast', '$state'];
+
+    function ProfileController($scope, Restangular, gaAppConfig, gaAuthentication, $stateParams, _, $mdDialog, gaToast, $state) {
         $scope.cfg = gaAppConfig;
         $scope.auth = gaAuthentication;
         $scope.isMyProfile = function() {
@@ -74,5 +78,6 @@
                 name   : 'Github'
             }
         };
-    });
+    }
+
 }());

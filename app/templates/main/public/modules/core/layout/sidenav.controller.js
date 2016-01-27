@@ -1,9 +1,14 @@
 (function() {
     'use strict';
-    var module = angular.module('core');
 
-    module.controller('SidenavController', function($scope, $mdSidenav, gaAuthentication, gaAppConfig, Restangular,
-                                                    gaToast, $timeout) {
+
+	angular
+		.module('core')
+		.controller('SidenavController', SidenavController);
+
+    SidenavController.$inject = ['$scope', '$mdSidenav', 'gaAuthentication', 'gaAppConfig', 'Restangular', 'gaToast', '$timeout'];
+
+	function SidenavController($scope, $mdSidenav, gaAuthentication, gaAppConfig, Restangular, gaToast, $timeout) {
         $scope.auth = gaAuthentication;
         $scope.cfg = gaAppConfig;
         $scope.closeSidenav = function() {
@@ -19,5 +24,5 @@
         };
 
         $scope.$on('$stateChangeSuccess', $scope.closeSidenav);
-    });
+    }
 }());

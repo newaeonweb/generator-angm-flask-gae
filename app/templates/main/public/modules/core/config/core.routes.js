@@ -1,8 +1,13 @@
 (function() {
     'use strict';
 
-    var module = angular.module('core');
-    module.config(function($stateProvider, $urlRouterProvider) {
+    angular
+		.module('core')
+		.config(config);
+
+	config.$inject = ['$stateProvider', '$urlRouterProvider'];
+
+	function config($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
 
         $stateProvider
@@ -16,5 +21,6 @@
                 controller  : 'FeedbackController',
                 templateUrl : '/p/modules/core/feedback/feedback.html'
             });
-    });
+    }
+
 }());

@@ -1,6 +1,9 @@
 (function() {
     'use strict';
-    var module = angular.module('users');
+
+	angular
+		.module('users')
+		.directive('gaAuthOptions', gaAuthOptions );
 
     /**
      * @name gaAuthOptions
@@ -11,7 +14,9 @@
      * Also inserts 'remember me' checkbox, which can be binded by remember="myModel"
      */
 
-    module.directive('gaAuthOptions', function(gaAppConfig) {
+	gaAuthOptions.$inject = ['gaAppConfig'];
+
+    function gaAuthOptions(gaAppConfig) {
         var link = function(scope) {
             scope.authOptions = _.keys(_.pick(gaAppConfig, function(cfg, cfgName) {
                 return _.startsWith(cfgName, 'auth_') && cfg;
@@ -32,6 +37,6 @@
             templateUrl : '/p/modules/users/directives/gaAuthOptions.html'
         };
 
-    });
+    }
 
 }());

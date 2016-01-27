@@ -1,12 +1,17 @@
 (function() {
     'use strict';
-    var module = angular.module('admin');
 
-    module.controller('AdminController', function(gaAuthentication, gaToast, gaBrowserHistory) {
+    angular
+		.module('admin')
+		.controller('AdminController', AdminController );
+
+    AdminController.$inject = ['gaAuthentication', 'gaToast', 'gaBrowserHistory'];
+
+	function AdminController(gaAuthentication, gaToast, gaBrowserHistory) {
         if (!gaAuthentication.isAdmin()) {
             gaToast.show('Sorry, you don\'t have permissions to access those pages');
             gaBrowserHistory.back();
         }
-    });
+    }
 
 }());

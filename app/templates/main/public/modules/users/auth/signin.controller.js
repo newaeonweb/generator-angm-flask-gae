@@ -1,9 +1,13 @@
 (function() {
     'use strict';
-    var module = angular.module('users');
 
-    module.controller('SigninController', function($scope, Restangular, gaAppConfig, gaAuthentication, gaBrowserHistory,
-                                                   gaToast, gaTracking) {
+	angular
+		.module('users')
+		.controller('SigninController', SigninController);
+
+    SigninController.$inject = ['$scope', 'Restangular', 'gaAppConfig', 'gaAuthentication', 'gaBrowserHistory', 'gaToast', 'gaTracking'];
+
+	function SigninController($scope, Restangular, gaAppConfig, gaAuthentication, gaBrowserHistory, gaToast, gaTracking) {
 
         if (gaAuthentication.isLogged()) {
             gaBrowserHistory.back();
@@ -42,6 +46,6 @@
             });
         };
 
-    });
+    }
 
 }());

@@ -1,5 +1,7 @@
-/**
- * @class angularModule.core
- * @memberOf angularModule
- */
-AppConfig.registerModule('core');
+(function() {
+    'use strict';
+
+	//Register Angular Module
+	AppConfig.registerModule('core');
+
+}());

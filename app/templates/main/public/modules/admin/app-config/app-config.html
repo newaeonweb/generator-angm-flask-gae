@@ -36,11 +36,11 @@
             <md-content class="md-padding"
                         md-swipe-left="next()"
                         md-swipe-right="previous()">
-                <md-input-container ng-repeat="(authKey, auth) in getAuthOptions()" class="md-block">
+                <md-input-container ng-repeat="(authKey, auth) in getAuthOptions() | orderBy: 'desc'" class="md-block">
                     <label>
                         <i class="fa fa-{{ getAuthName(authKey) }}"></i>
                         {{capitalizeAuthName(authKey)}}
-                        {{isSecretKey(authKey) ? 'secret key' : 'public ID'}} </label>
+                        {{isSecretKey(authKey)? 'secret key' : 'public ID'}} </label>
                     <input ng-model="cfg[authKey]"
                            tabindex="$index"
                            name="{{authKey}}">

@@ -1,8 +1,13 @@
 (function() {
     'use strict';
-    var module = angular.module('users');
 
-    module.controller('ProfilePasswordController', function($scope, gaToast, $state, gaBrowserHistory, gaTracking) {
+	angular
+		.module('users')
+		.controller('ProfilePasswordController', ProfilePasswordController);
+
+	ProfilePasswordController.$inject = ['$scope', 'gaToast', '$state', 'gaBrowserHistory', 'gaTracking' ];
+
+	function ProfilePasswordController($scope, gaToast, $state, gaBrowserHistory, gaTracking) {
         if (!$scope.hasAuthorization()) {
             gaBrowserHistory.back();
         }
@@ -14,5 +19,6 @@
                 $state.go('profile.view', {username : $scope.user.username});
             });
         };
-    });
+    }
+
 }());

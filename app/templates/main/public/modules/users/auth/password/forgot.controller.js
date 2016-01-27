@@ -1,8 +1,13 @@
 (function() {
     'use strict';
-    var module = angular.module('users');
 
-    module.controller('ForgotController', function($scope, Restangular, gaToast, gaBrowserHistory, gaTracking) {
+	angular
+		.module('users')
+		.controller('ForgotController', ForgotController);
+
+	ForgotController.$inject = ['$scope', 'Restangular', 'gaToast', 'gaBrowserHistory', 'gaTracking'];
+
+    function ForgotController($scope, Restangular, gaToast, gaBrowserHistory, gaTracking) {
 
         $scope.askForNewPassword = function() {
             Restangular.all('auth/forgot').post($scope.credentials).then(function() {
@@ -11,6 +16,6 @@
                 gaBrowserHistory.back();
             });
         };
-    });
+    }
 
 }());

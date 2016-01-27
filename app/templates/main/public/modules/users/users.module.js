@@ -1,6 +1,9 @@
-/**
- * @class angularModule.users
- * @memberOf angularModule
- */
+(function() {
+    'use strict';
 
-AppConfig.registerModule('users');
+	//Register Angular Module
+	AppConfig.registerModule('users');
+
+}());
+
+

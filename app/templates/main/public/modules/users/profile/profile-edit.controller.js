@@ -1,8 +1,13 @@
 (function() {
     'use strict';
-    var module = angular.module('users');
 
-    module.controller('ProfileEditController', function($scope, gaBrowserHistory, gaToast, _, gaValidators, gaTracking) {
+	angular
+		.module('users')
+		.controller('ProfileEditController', ProfileEditController);
+
+	ProfileEditController.$inject = ['$scope', 'gaBrowserHistory', 'gaToast', '_', 'gaValidators', 'gaTracking'];
+
+    function ProfileEditController($scope, gaBrowserHistory, gaToast, _, gaValidators, gaTracking) {
 
         if (!$scope.hasAuthorization()) {
             gaBrowserHistory.back();
@@ -24,5 +29,6 @@
                 gaToast.show('A profile was successfully updated');
             });
         };
-    });
+    }
+
 }());

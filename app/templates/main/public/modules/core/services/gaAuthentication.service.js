@@ -1,6 +1,9 @@
 (function() {
     'use strict';
-    var module = angular.module('core');
+
+	angular
+		.module('core')
+		.factory('gaAuthentication', gaAuthentication );
 
     /**
      * @name gaAuthentication
@@ -9,7 +12,9 @@
      * This service holds user object, so it can be used in any controller
      */
 
-    module.factory('gaAuthentication', function(gaAuthenticatedUser, Restangular) {
+	gaAuthentication.$inject = ['gaAuthenticatedUser', 'Restangular'];
+
+    function gaAuthentication(gaAuthenticatedUser, Restangular) {
         var me = {
             user     : gaAuthenticatedUser,
             isLogged : function() {
@@ -24,6 +29,6 @@
         };
 
         return me;
-    });
+    }
 
 }());

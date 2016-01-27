@@ -1,8 +1,13 @@
 (function() {
     'use strict';
 
-    var module = angular.module('users');
-    module.config(function($stateProvider) {
+    angular
+		.module('users')
+		.config(config);
+
+	config.$inject = ['$stateProvider'];
+
+	function config($stateProvider) {
         $stateProvider
             .state('signin', {
                 url         : '/signin',
@@ -75,5 +80,6 @@
                 controller  : 'UsersController',
                 templateUrl : '/p/modules/users/users-list/users.html'
             });
-    });
+    }
+
 }());

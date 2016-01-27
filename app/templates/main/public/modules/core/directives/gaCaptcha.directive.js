@@ -1,6 +1,9 @@
 (function() {
     'use strict';
-    var module = angular.module('core');
+
+	angular
+		.module('core')
+		.directive('gaCaptcha', gaCaptcha);
 
     /**
      * @name gaCaptcha
@@ -12,7 +15,8 @@
      * - Admin must set recaptcha_public_key & recaptcha_private_key
      * - If captcha has attribute anonymousOnly, logged users won't see it
      */
-    module.directive('gaCaptcha', function(gaAppConfig, gaAuthentication) {
+
+	function gaCaptcha(gaAppConfig, gaAuthentication) {
         /*jslint unparam:true*/
         var prelink = function(scope, el, attrs, form) {
             //jscs:disable requireCamelCaseOrUpperCaseIdentifiers
@@ -53,6 +57,6 @@
                 '</no-captcha>'
             ].join(' ')
         };
-    });
+    }
 
 }());

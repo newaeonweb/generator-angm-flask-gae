@@ -1,11 +1,15 @@
 (function() {
     'use strict';
 
-    var module = angular.module('core');
+    angular
+		.module('core')
+		.constant('_', _)
+		.config(config)
+		.run(runBlock);
 
-    module.constant('_', _);
+	config.$inject = ['$locationProvider', 'RestangularProvider', '$mdThemingProvider'];
 
-    module.config(function($locationProvider, RestangularProvider, $mdThemingProvider) {
+    function config($locationProvider, RestangularProvider, $mdThemingProvider) {
         $locationProvider.html5Mode(false);
 
         RestangularProvider
@@ -17,10 +21,11 @@
         $mdThemingProvider.theme('default')
             .primaryPalette('indigo')
             .accentPalette('blue');
-    });
+    }
 
-    module.run(function(Restangular, gaToast, $state, $rootScope, $timeout, gaFlashMessages, _,
-                        gaAuthentication, gaBrowserHistory) {
+	runBlock.$inject = ['Restangular', 'gaToast', '$state', '$rootScope', '$timeout', 'gaFlashMessages', '_', 'gaAuthentication', 'gaBrowserHistory' ];
+
+    function runBlock(Restangular, gaToast, $state, $rootScope, $timeout, gaFlashMessages, _, gaAuthentication, gaBrowserHistory) {
         var loadingPromise;
         var endLoading = function() {
             $timeout.cancel(loadingPromise);
@@ -111,6 +116,6 @@
             $rootScope.$broadcast('mainContentScrolled');
         };
 
-    });
+    }
 
 }());

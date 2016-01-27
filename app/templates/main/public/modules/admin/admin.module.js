@@ -1,5 +1,9 @@
-/**
- * @class angularModule.admin
- * @memberOf angularModule
- */
-AppConfig.registerModule('admin');
+(function() {
+    'use strict';
+
+	//Register Angular Module
+	AppConfig.registerModule('admin');
+
+}());
+
+

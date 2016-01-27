@@ -1,6 +1,9 @@
 (function() {
     'use strict';
-    var module = angular.module('core');
+
+	angular
+		.module('core')
+		.directive('gaInputValidator', gaInputValidator);
 
     /**
      * @name gaInputValidator
@@ -23,7 +26,8 @@
      *
      * If you want to use md-maxlength to show character counter pass show-counter="true"
      */
-    module.directive('gaInputValidator', function($compile, gaValidators, _) {
+
+    function gaInputValidator($compile, gaValidators, _) {
         var compile = function(el, attrs) {
             var type = attrs.gaInputValidator || attrs.name;
             var values = gaValidators[attrs.validatorCategory][type];
@@ -54,6 +58,6 @@
             compile  : compile,
             restrict : 'A'
         };
-    });
+    }
 
 }());

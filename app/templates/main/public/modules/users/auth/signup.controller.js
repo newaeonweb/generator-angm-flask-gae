@@ -1,9 +1,13 @@
 (function() {
     'use strict';
-    var module = angular.module('users');
 
-    module.controller('SignupController', function($scope, Restangular, gaAppConfig, gaToast, gaBrowserHistory,
-                                                   gaAuthentication, _, gaTracking, $state) {
+	angular
+		.module('users')
+		.controller('SignupController', SignupController);
+
+    SignupController.$inject = ['$scope', 'Restangular', 'gaAppConfig', 'gaToast', 'gaBrowserHistory', 'gaAuthentication', '_', 'gaTracking', '$state'];
+
+	function SignupController($scope, Restangular, gaAppConfig, gaToast, gaBrowserHistory, gaAuthentication, _, gaTracking, $state) {
         if (gaAuthentication.isLogged()) {
             gaBrowserHistory.back();
         }
@@ -26,5 +30,6 @@
                 _.attempt($scope.captchaControl.reset);
             });
         };
-    });
+    }
+
 }());

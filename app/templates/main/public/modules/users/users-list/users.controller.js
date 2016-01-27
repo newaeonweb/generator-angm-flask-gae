@@ -1,8 +1,13 @@
 (function() {
     'use strict';
-    var module = angular.module('admin');
 
-    module.controller('UsersController', function($scope, Restangular) {
+	angular
+		.module('admin')
+		.controller('UsersController', UsersController);
+
+    UsersController.$inject = ['$scope', 'Restangular'];
+
+	function UsersController($scope, Restangular) {
 
         var ctrl = this;
         var nextCursor = '';
@@ -31,5 +36,6 @@
             ctrl.getUsers();
         });
 
-    });
+    }
+
 }());

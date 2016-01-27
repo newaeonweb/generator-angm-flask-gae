@@ -1,6 +1,10 @@
 (function() {
     'use strict';
-    var module = angular.module('core');
+
+
+	angular
+		.module('core')
+		.factory('gaToast', gaToast);
 
     /**
      * @name gaToast
@@ -9,7 +13,9 @@
      * Service responsible for showing, hiding, updating toast
      */
 
-    module.factory('gaToast', function($mdToast, _) {
+	gaToast.$inject = ['$mdToast', '_' ];
+
+    function gaToast($mdToast, _) {
         return {
             show   : function(content, opts) {
                 opts = opts || {};
@@ -30,6 +36,6 @@
                 $mdToast.hide();
             }
         };
-    });
+    }
 
 }());

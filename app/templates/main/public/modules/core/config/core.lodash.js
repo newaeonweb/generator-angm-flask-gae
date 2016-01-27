@@ -1,12 +1,9 @@
-/**
- * Lodash Config
- * @namespace Config
- */
-
 (function() {
     'use strict';
 
-    var module = angular.module('core');
+    angular
+		.module('core')
+		.run(lodashConfig);
 
     /**
      * @namespace Lodash
@@ -14,7 +11,7 @@
      * In this function you can extend lodash functionality by adding custom functions
      */
 
-    module.run(function(_) {
+    function lodashConfig(_) {
         var methods = {};
 
         /**
@@ -47,6 +44,6 @@
         _.each(methods, function(method, methodName) {
             _[methodName] = _.bind(method, _);
         });
-    });
+    }
 
 }());

@@ -1,6 +1,9 @@
 (function() {
     'use strict';
-    var module = angular.module('users');
+
+	angular
+		.module('users')
+		.directive('gaPassword', gaPassword);
 
     /**
      * @name gaPassword
@@ -11,7 +14,9 @@
      * for this directive. It will display error is passwords don't match
      */
 
-    module.directive('gaPassword', function(gaValidators) {
+    gaPassword.$inject = ['gaValidators'];
+
+	function gaPassword(gaValidators) {
         /*jslint unparam:true*/
         var link = function(scope, el, attrs, ctrls) {
             var form = ctrls[0];
@@ -45,6 +50,6 @@
             templateUrl : '/p/modules/users/directives/gaPassword.html'
         };
 
-    });
+    }
 
 }());
